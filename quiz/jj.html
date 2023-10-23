@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .question {
+            margin-bottom: 10px;
+        }
+        .options label {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quiz</h1>
+    <div class="question">
+        <p>1. What is the capital of France?</p>
+        <div class="options">
+            <label><input type="radio" name="q1" value="a"> a) London</label>
+            <label><input type="radio" name="q1" value="b"> b) Berlin</label>
+            <label><input type="radio" name="q1" value="c"> c) Paris</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <p>2. Which planet is known as the Red Planet?</p>
+        <div class="options">
+            <label><input type="radio" name="q2" value="a"> a) Mars</label>
+            <label><input type="radio" name="q2" value="b"> b) Venus</label>
+            <label><input type="radio" name="q2" value="c"> c) Jupiter</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <p>3. What is the largest mammal in the world?</p>
+        <div class="options">
+            <label><input type="radio" name="q3" value="a"> a) Elephant</label>
+            <label><input type="radio" name="q3" value="b"> b) Blue Whale</label>
+            <label><input type="radio" name="q3" value="c"> c) Lion</label>
+        </div>
+    </div>
+
+    <button onclick="submitQuiz()">Submit</button>
+
+    <script>
+        function submitQuiz() {
+            var answers = [];
+            var questions = document.querySelectorAll('.question');
+
+            questions.forEach(function(question) {
+                var selectedOption = question.querySelector('input:checked');
+                if (selectedOption) {
+                    answers.push(selectedOption.value);
+                }
+            });
+
+            // You can send 'answers' to your server for processing
+            console.log('Answers:', answers);
+            alert('Quiz submitted!');
+        }
+    </script>
+</body>
+</html>
+
