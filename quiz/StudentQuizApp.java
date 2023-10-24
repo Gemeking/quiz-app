@@ -36,9 +36,9 @@ public class StudentQuizApp extends JFrame {
         String url = "http://localhost/";
 
         if (quizName.equals("Quiz 1")) {
-            url += "hh.html";
+            url += "jj.html";
         } else if (quizName.equals("Quiz 2")) {
-            url += "ii.html";
+            url += "jj.html";
         } else if (quizName.equals("Quiz 3")) {
             url += "jj.html";
         } else {
